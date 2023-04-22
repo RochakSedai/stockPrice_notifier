@@ -50,7 +50,3 @@ def subscribe():
     thread = Thread(target=send_alert_background, args=(alert_id, stockSymbol, stockPrice, notificationEmail, stockinterval, stockintervalType))
     thread.start()
     return jsonify({'status': 'success', 'message': 'Stock Alert Created', 'alert_id': alert_id})
-
-    sys.exit()
-    # # Generate a unique ID for the alert
-    # alert_id = str(uuid.uuid1())
