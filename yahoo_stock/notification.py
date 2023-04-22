@@ -8,7 +8,7 @@ def sendMail(notificationEmail,stockSymbol, input_stockPrice, current_price):
     receiver_email = notificationEmail
 
     subject = "Stock Alert"
-    message = "Stock price is higher than threshold. Symbol: "+stockSymbol+" Threshold Price: "+str(input_stockPrice)+" Current Price: "+str(current_price)
+    message = "Hey Subscriber!!, Stock price of symbol"+stockSymbol+" is higher than threshold. Threshold Price: "+str(input_stockPrice)+" and Current Price: "+str(current_price)
     msg = MIMEMultipart()
     msg['From'] = sender_email
     msg['To'] = receiver_email
@@ -28,7 +28,7 @@ def sendSMS(notificationNumber, stockSymbol, input_stockPrice, current_price):
     client = Client(account_sid, auth_token)
     message = client.messages \
         .create(
-            body="The stock price is higher than threshold. Symbol: "+stockSymbol+" Threshold Price: "+str(input_stockPrice)+" Current Price: "+ str(current_price),
+            body="Hey Subscriber!!, Stock price of symbol"+stockSymbol+" is higher than threshold. Threshold Price: "+str(input_stockPrice)+" and Current Price: "+str(current_price),
             from_='+16813346935',
             to='+9779861923536'
         )
