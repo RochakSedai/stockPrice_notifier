@@ -24,10 +24,9 @@ def sendMail(notificationEmail,stockSymbol, input_stockPrice, current_price):
 
 def sendSMS(notificationNumber, stockSymbol, input_stockPrice, current_price):
     account_sid = 'ACf1807978d7331b24676d44a40577a312'
-    auth_token = 'bbb5307dda5f64e512a9563796b160fc'
+    auth_token = 'e421caf38466ecf5205613a2493f7449'
     client = Client(account_sid, auth_token)
-    message = client.messages \
-        .create(
+    message = client.messages.create(
             body="Hey Subscriber!!, Stock price of symbol"+stockSymbol+" is higher than threshold. Threshold Price: "+str(input_stockPrice)+" and Current Price: "+str(current_price),
             from_='+16813346935',
             to='+9779861923536'
