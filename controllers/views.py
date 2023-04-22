@@ -42,11 +42,14 @@ def subscribe():
     
     stockPrice=data['threshold']
     notificationEmail=data['email']
+    notificationNumber = data['ph_no']
+    notificationType = data['notification-type']
     stockinterval=data['time']
     stockintervalType = data['time-type']
+    
 
     alert_id = str(uuid.uuid1())
 
-    thread = Thread(target=send_alert_background, args=(alert_id, stockSymbol, stockPrice, notificationEmail, stockinterval, stockintervalType))
+    thread = Thread(target=send_alert_background, args=(alert_id, stockSymbol, stockPrice, notificationEmail, notificationNumber, notificationType, stockinterval, stockintervalType))
     thread.start()
     return jsonify({'status': 'success', 'message': 'Stock Alert Created', 'alert_id': alert_id})

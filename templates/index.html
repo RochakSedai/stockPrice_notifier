@@ -3,6 +3,9 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+
+	<a href="/stock"><button style="margin-top: 20px; margin-left: 50%;" class="btn-btn primary"> View stock based on Symbol</button></a>
+
 	<div class="container d-flex h-75">
 	    <div class="row justify-content-center align-self-center welcome">
 	    	<h3>Hi User!!</h3>
@@ -17,6 +20,22 @@
 			  <div class="form-group">
 			    <label for="email">Email</label>
 			    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Subscribe with email..." required>
+			  </div>
+			  <div style="height:7px"></div>
+			  <div class="form-group">
+			    <label for="phone">Phone Number:</label>
+			    <input type="tel" name="ph_no" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your phone number ...." required>
+			  </div>
+			  <div class="form-group">
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="notification-type" id="inlineRadio1" value="mail" checked>
+					<label class="form-check-label" for="inlineRadio1">Email</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="notification-type" id="inlineRadio2" value="sms">
+					<label class="form-check-label" for="inlineRadio2">SMS</label>
+				</div>
+
 			  </div>
 			  <div style="height:7px"></div>
 			  <div class="form-group">
